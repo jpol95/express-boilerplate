@@ -9,9 +9,8 @@ const errorHandler = require('./middleware/error-handler')
 
 const app = express();
 
-const morganOption = (NODE_ENV === 'production')
-
-app.use(morgan(morganOption));
+const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
+app.use(morgan(morganSetting))
 app.use(helmet());
 app.use(cors());
 

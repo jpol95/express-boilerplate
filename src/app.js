@@ -15,7 +15,7 @@ app.use(helmet());
 app.use(cors());
 
 app.use(errorHandler)
-app.use(validateBearerToken);
+// app.use(validateBearerToken);
 
 app.get("/", (req, res) => {
   res.send("Hello, world!");
